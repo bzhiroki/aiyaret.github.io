@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <!-- Bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  
+    <style>
+      body {font-family: Arial, Helvetica, sans-serif;}
+      * {box-sizing: border-box;}
+      
+      /* Full-width input fields */
+      input[type=text], input[type=password] {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        display: inline-block;
+        border: none;
+        background: #f1f1f1;
+      }
+      
+      /* Add a background color when the inputs get focus */
+      input[type=text]:focus, input[type=password]:focus {
+        background-color: #ddd;
+        outline: none;
+      }
+      
+      /* Set a style for all buttons */
+      button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+      }
+      
+      button:hover {
+        opacity:1;
+      }
+      
+      /* Extra styles for the cancel button */
+      .cancelbtn {
+        padding: 14px 20px;
+        background-color: #f44336;
+      }
+      
+      /* Float cancel and signup buttons and add an equal width */
+      .cancelbtn, .signupbtn {
+        float: left;
+        width: 50%;
+      }
+      
+      /* Add padding to container elements */
+      .container {
+        padding: 16px;
+      }
+      
+      /* The Modal (background) */
+      .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: #474e5d;
+        padding-top: 50px;
+      }
+      
+      /* Modal Content/Box */
+      .modal-content {
+        background-color: #fefefe;
+        margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+        border: 1px solid #888;
+        width: 80%; /* Could be more or less, depending on screen size */
+      }
+      
+      /* Style the horizontal ruler */
+      hr {
+        border: 1px solid #f1f1f1;
+        margin-bottom: 25px;
+      }
+       
+      /* The Close Button (x) */
+      .close {
+        position: absolute;
+        right: 35px;
+        top: 15px;
+        font-size: 40px;
+        font-weight: bold;
+        color: #f1f1f1;
+      }
+      
+      .close:hover,
+      .close:focus {
+        color: #f44336;
+        cursor: pointer;
+      }
+      
+      /* Clear floats */
+      .clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+      
+      /* Change styles for cancel button and signup button on extra small screens */
+      @media screen and (max-width: 300px) {
+        .cancelbtn, .signupbtn {
+           width: 100%;
+        }
+      }
+      </style>
+
+</head>
+<body>
+  <form action="" method="post" name="form1" onSubmit="JavaScript:return fSubmit();">
+      <div class="container">
+                         <h1>Sign Up</h1>
+                         <hr>
+                         <label for="fname"><b>FirstName</b></label>
+                         <input type="text" placeholder="Enter firstname" name="fname" >
+
+                         <label for="lname"><b>LastName</b></label>
+                         <input type="text" placeholder="Enter lastname" name="lname" >
+
+                         <label for="bdate"><b>Birthday</b></label>
+                         <input type="date" placeholder="Enter Birthday" name="bdate" >
+
+                         <label for="lname"><b>LastName</b></label>
+                         <input type="text" placeholder="Enter lastname" name="lname" >
+
+                         <label for="email"><b>Email</b></label>
+                         <input type="text" placeholder="Enter Email" name="email" >
+
+                         <label for="psw"><b>Password</b></label>
+                         <input type="password" placeholder="Enter Password" name="psw" >
+                  
+                
+                         <label>
+                           <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+                         </label>
+                            
+                         <div class="clearfix">
+                          <button type="submit" class="signupbtn btn-danger">cancel</button>
+                     
+                           <button type="submit" class="signupbtn">Sign Up</button>
+                         </div>
+        </div>
+  </form>
+
+</body>
+
+<script type="text/javascript">
+	function fSubmit()
+	{
+		if(document.form1.fname.value == "")
+		{
+			swal({
+                title: "Error",
+                text: "กรุณากรอกชื่อ",
+                icon: "error",
+            });
+			document.form1.fname.focus();
+			return false;
+		}	
+
+		if(document.form1.lname.value == "")
+		{
+			swal({
+                title: "Error!",
+                text: "กรุณากรอกสกุล",
+                icon: "error",
+            });
+			document.form1.lname.focus();		
+			return false;
+		}	
+
+    if(document.form1.bdate.value == "")
+		{
+			swal({
+                title: "Error!",
+                text: "กรุณากรอกวันเกิด",
+                icon: "error",
+            });
+			document.form1.bdate.focus();		
+			return false;
+		}	
+    
+    if(document.form1.email.value == "")
+		{
+			swal({
+                title: "Error!",
+                text: "กรุณากรอกemail",
+                icon: "error",
+            });
+			document.form1.email.focus();		
+			return false;
+		}	
+
+    if(document.form1.psw.value == "")
+		{
+			swal({
+                title: "Error!",
+                text: "กรุณากรอกรหัส",
+                icon: "error",
+            });
+			document.form1.psw.focus();		
+			return false;
+		}	
+
+
+		document.form1.submit();
+
+
+	}
+	</script>
+
+</html>

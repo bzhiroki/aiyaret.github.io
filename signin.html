@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <!-- Bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  
+
+</head>
+<body>
+  <form action="" method="post" name="form1" onSubmit="JavaScript:return fSubmit();">
+                       <div class="container">
+                         <h1>Sign Up</h1>
+                         <hr>
+                         <label for="fname"><b>FirstName</b></label>
+                         <input type="text" placeholder="Enter firstname" name="Username" >
+                         <label for="lname"><b>LastName</b></label>
+                         <input type="text" placeholder="Enter lastname" name="Password" >
+                         <label for="email"><b>Email</b></label>
+                         <input type="text" placeholder="Enter Email" name="mail" >
+                         <label for="psw"><b>Password</b></label>
+                         <input type="password" placeholder="Enter Password" name="psw" >
+                         <label for="psw-repeat"><b>Repeat Password</b></label>
+                         <input type="password" placeholder="Repeat Password" name="psw-repeat" >
+                
+                         <label>
+                           <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+                         </label>
+                            
+                         <div class="clearfix">
+                          <button type="submit" class="signupbtn btn-danger">cancel</button>
+                     
+                           <button type="submit" class="signupbtn">Sign Up</button>
+                         </div>
+                        </form>
+
+</body>
+
+<script type="text/javascript">
+	function fSubmit()
+	{
+		if(document.form1.Username.value == "")
+		{
+			swal({
+                title: "Error",
+                text: "กรุณากรอกข้อมูล",
+                icon: "error",
+            });
+			document.form1.Username.focus();
+			return false;
+		}	
+
+		if(document.form1.Password.value == "")
+		{
+			swal({
+                title: "Error!",
+                text: "กรุณากรอกรหัส",
+                icon: "error",
+            });
+			document.form1.Password.focus();		
+			return false;
+		}	
+    if(document.form1.mail.value == "")
+		{
+			swal({
+                title: "Error!",
+                text: "กรุณากรอกรหัส",
+                icon: "error",
+            });
+			document.form1.mail.focus();		
+			return false;
+		}	
+		document.form1.submit();
+	}
+	</script>
+
+</html>
